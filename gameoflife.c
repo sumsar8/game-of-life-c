@@ -25,8 +25,10 @@ int main(){
 		}
 	}
    	for(int i = 0; i < matrix_size; i++) {
-      	for(int j = 0; j < matrix_size; j++) {
-			matrix[i][j] = 0; 
+      		for(int j = 0; j < matrix_size; j++) {
+			matrix[i][j] = 0;
+			// om du vill ha ett flygskäpp så använd if satserna men om du vill ha ett randomized start shit så kommentera bort if satserna och ta bort kommentaren från rad framför
+        		//matrix[i][j] = rand() % 2; 
 
 			if(i == 4 && j == 4){
 				matrix[i][j] = 1;
@@ -43,7 +45,6 @@ int main(){
 			if(i == 6 && j == 3){
 				matrix[i][j] = 1;
 			}
-        	//matrix[i][j] = rand() % 2; 
 		}
 	}
 
@@ -73,7 +74,7 @@ void flip(int matrix[matrix_size][matrix_size],int next_matrix[matrix_size][matr
       		for(int j = 0; j < matrix_size; j++) {
         		matrix[i][j] = next_matrix[i][j];
       		}
-   		}
+   	}
 }
 void draw(int matrix[matrix_size][matrix_size]){
    		for(int i = 0; i < matrix_size; i++) {
@@ -83,7 +84,7 @@ void draw(int matrix[matrix_size][matrix_size]){
             			printf("\n");
          			}
       		}
-   		}
+   	}
 }
 void nextGen(int matrix[matrix_size][matrix_size], int next_matrix[matrix_size][matrix_size]){
 	for(int i = 1; i < matrix_size - 1; i++) {
@@ -100,8 +101,8 @@ void nextGen(int matrix[matrix_size][matrix_size], int next_matrix[matrix_size][
                 } else {
                     next_matrix[i][j] = 0;
 				}
-      		}
-   		}
+			}
+		}
 	}
 }
 int neighbors(int matrix[matrix_size][matrix_size],int i,int j){
